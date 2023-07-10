@@ -38,5 +38,5 @@ html {
 }
 
 .user-liked {
-  color: ;
+  color: var(--like);
 }
