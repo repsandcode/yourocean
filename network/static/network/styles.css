@@ -30,7 +30,7 @@ html {
 }
 
 .username {
-  color: ;
+  color: var(--username);
 }
 
 .username:hover {
