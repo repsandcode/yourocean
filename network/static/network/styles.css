@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --username: rgb(0, 157, 196);
+  --like: rgb(250, 160, 160);
+}
+
 body,
 html {
   font-size: 62.5%;
@@ -25,7 +30,7 @@ html {
 }
 
 .username {
-  color: rgb(0, 157, 196);
+  color: ;
 }
 
 .username:hover {
@@ -33,5 +38,5 @@ html {
 }
 
 .user-liked {
-  color: rgb(250, 160, 160);
+  color: ;
 }
