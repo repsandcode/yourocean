@@ -1,0 +1,56 @@
+{% extends "network/layout.html" %}
+
+{% block title %}
+Register - Network
+{% endblock %}
+
+
+{% block nav %}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-6 vh-100 d-flex flex-column justify-content-center mx-auto">
+        <div class="mb-5">
+            <h1 class="display-6 mb-5">Network</h1>
+            <h2 class="fs-1 fw-normal mb-3">Register an account.</h2>
+            <p class="fs-5 text-secondary">Enter your email address and create a password to register.</p>
+        </div>
+
+        {% if message %}
+        <div>{{ message }}</div>
+        {% endif %}
+
+
+        {% if message %}
+        <div class="mt-5 mb-3 fs-5" style="height: 130px;">{{ message }}</div>
+        {% endif %}
+
+        <div class="mb-4">
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group mb-4">
+                    <input autofocus class="form-control p-3 fs-4" type="text" name="username" placeholder="Username"
+                        required>
+                </div>
+                <div class="form-group mb-4">
+                    <input autofocus class="form-control p-3 fs-4" type="email" name="email" placeholder="Email"
+                        required>
+                </div>
+                <div class="form-group mb-4">
+                    <input class="form-control p-3 fs-4" type="password" name="password" placeholder="Password"
+                        required>
+                </div>
+                <div class="form-group mb-4">
+                    <input class="form-control p-3 fs-4" type="password" name="confirmation"
+                        placeholder="Confirm Password" required>
+                </div>
+                <input class="btn btn-primary w-100 p-3 fs-4" type="submit" value="Register">
+            </form>
+        </div>
+        <div class="text-center fs-5">
+            Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

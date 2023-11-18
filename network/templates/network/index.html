@@ -1,0 +1,22 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div class="py-1">
+    <form id="post-form" class="mb-5">
+        {% csrf_token %}
+        <textarea class="form-control p-3 fs-4 mb-3 post-content" id="post-content" placeholder="What's happening?"
+            required></textarea>
+        <div class="d-flex justify-content-end">
+            <input type="submit" class="btn btn-primary px-4 py-2 fs-4" value="Post" />
+        </div>
+    </form>
+
+    <section id="user-profile" class="mb-5"></section>
+
+    <main id="posts" class="mb-5">
+    </main>
+
+    <div id="pagination">
+    </div>
+</div>
+{% endblock %}
