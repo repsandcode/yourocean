@@ -35,7 +35,11 @@ function view_posts(view, page_num = 1) {
 function view_profile() {
   document.querySelector("#post-form").style.display = "none";
 
-  const username = this.innerHTML;
+  let username = this.innerHTML;
+
+  if (username === "Profile") {
+    username = this.dataset.username;
+  }
 
   fetch_profile(username);
 }

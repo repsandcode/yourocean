@@ -22,7 +22,7 @@
                 <ul class="navbar-nav mr-auto fs-4">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link pointer" id="username">{{ user.username }}</a>
+                        <a class="nav-link pointer">{{ user.username }}</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
@@ -32,9 +32,22 @@
                     <li class=" nav-item">
                         <a class="nav-link pointer" id="following">Following</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link pointer" href="{% url 'logout' %}">Log Out</a>
-                    </li>
+
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show"
+                            data-bs-toggle="dropdown" aria-expanded="true">
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
+                                class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small show" data-popper-placement="bottom-start"
+                            style="inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34px, 0px);">
+                            <li><a class="dropdown-item pointer" id="username"
+                                    data-username="{{user.username}}">Profile</a></li>
+                            <li><a class="dropdown-item pointer" href="{% url 'logout' %}">Sign out</a></li>
+                        </ul>
+                    </div>
+
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link pointer" href="{% url 'login' %}">Log In</a>
