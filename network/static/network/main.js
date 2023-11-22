@@ -11,14 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelector("#following")
     .addEventListener("click", () => view_posts("following"));
 
-  document.querySelector("#username").addEventListener("click", view_profile);
+  document
+    .querySelector("#username")
+    .addEventListener("click", () => view_profile);
 
   view_posts("all");
 });
 
 function view_posts(view, page_num = 1) {
   document.querySelector("#user-profile").style.display = "none";
-  document.querySelector("#post-form").style.display = "block";
+  document.querySelector("#post-form").style.display = "";
   document.querySelector("#post-form").onsubmit = create_post;
 
   // Adjust the height of the textarea based on its content

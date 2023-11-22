@@ -15,15 +15,15 @@
 <body>
     <div class="container-lg">
         {% block nav %}
-        <nav class="navbar navbar-expand-lg mb-4">
-            <a class="navbar-brand pointer display-6 fs-2" id="logo">Your Ocean</a>
+        <nav class="navbar mb-4 d-flex justify-space-between">
+            <a class="pointer display-6 fs-2 text-decoration-none" id="logo">Your Ocean</a>
 
-            <div>
-                <ul class="navbar-nav mr-auto fs-4">
+            <div class="border border-primary">
+                <ul class="navbar-nav mr-auto fs-4 flex-row">
                     <li class="nav-item">
                         <a class="nav-link pointer" id="all-posts">All Posts</a>
                     </li>
-                    <li class=" nav-item">
+                    <li class="nav-item">
                         <a class="nav-link pointer" id="following">Following</a>
                     </li>
                 </ul>
@@ -36,14 +36,14 @@
                 </a>
                 <ul class="dropdown-menu text-small show" data-popper-placement="bottom-start"
                     style="inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34px, 0px);">
-                    {% if user.is_authenticated %}
+
                     <li><a class="dropdown-item pointer" id="username" data-username="{{user.username}}">Profile</a>
                     </li>
                     <li><a class="dropdown-item pointer" href="{% url 'logout' %}">Sign out</a></li>
-                    {% else %}
-                    <li><a class="dropdown-item pointer" href="{% url 'login' %}">Sign in</a></li>
-                    <li><a class="dropdown-item pointer" href="{% url 'register' %}">Register</a></li>
-                    {% endif %}
+
+                    <!-- <li><a class="dropdown-item pointer" href="{% url 'login' %}">Sign in</a></li>
+                    <li><a class="dropdown-item pointer" href="{% url 'register' %}">Register</a></li> -->
+
                 </ul>
             </div>
         </nav>
