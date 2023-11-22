@@ -15,38 +15,36 @@
 <body>
     <div class="container-lg">
         {% block nav %}
-        <nav class="navbar mb-4 d-flex justify-space-between">
-            <a class="pointer display-6 fs-2 text-decoration-none" id="logo">Your Ocean</a>
+        <header class="mb-4">
+            <nav class="navbar flex justify-space-between nav-height">
+                <a class="logo pointer display-6 fs-2 text-decoration-none" id="logo">Your Ocean</a>
 
-            <div class="border border-primary">
-                <ul class="navbar-nav mr-auto fs-4 flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link pointer" id="all-posts">All Posts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pointer" id="following">Following</a>
-                    </li>
-                </ul>
-            </div>
+                <div class="border p-2 rounded-pill" id="view-box">
+                    <ul class="navbar-nav mr-auto fs-4 flex-row">
+                        <li class="px-5 py-1 rounded-pill" id="all">
+                            <a class="nav-link pointer">All Posts</a>
+                        </li>
+                        <li class="px-5 py-1 rounded-pill" id="following">
+                            <a class="nav-link pointer">Following</a>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="dropdown text-end">
-                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show"
-                    data-bs-toggle="dropdown" aria-expanded="true">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small show" data-popper-placement="bottom-start"
-                    style="inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34px, 0px);">
-
-                    <li><a class="dropdown-item pointer" id="username" data-username="{{user.username}}">Profile</a>
-                    </li>
-                    <li><a class="dropdown-item pointer" href="{% url 'logout' %}">Sign out</a></li>
-
-                    <!-- <li><a class="dropdown-item pointer" href="{% url 'login' %}">Sign in</a></li>
+                <div class="dropdown">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item pointer" id="username" data-username="{{user.username}}">Profile</a>
+                        </li>
+                        <li><a class="dropdown-item pointer" href="{% url 'logout' %}">Sign out</a></li>
+                        <!-- <li><a class="dropdown-item pointer" href="{% url 'login' %}">Sign in</a></li>
                     <li><a class="dropdown-item pointer" href="{% url 'register' %}">Register</a></li> -->
-
-                </ul>
-            </div>
-        </nav>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         {% endblock %}
 
         {% block body %}

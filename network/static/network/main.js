@@ -4,23 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", () => view_posts("all"));
 
   document
-    .querySelector("#all-posts")
+    .querySelector("#all")
     .addEventListener("click", () => view_posts("all"));
 
   document
     .querySelector("#following")
     .addEventListener("click", () => view_posts("following"));
 
-  document
-    .querySelector("#username")
-    .addEventListener("click", () => view_profile);
+  document.querySelector("#username").addEventListener("click", view_profile);
 
   view_posts("all");
 });
 
 function view_posts(view, page_num = 1) {
   document.querySelector("#user-profile").style.display = "none";
-  document.querySelector("#post-form").style.display = "";
+  document.querySelector("#view-box").style.display = "block";
+  document.querySelector("#post-form").style.display = "block";
   document.querySelector("#post-form").onsubmit = create_post;
 
   // Adjust the height of the textarea based on its content
@@ -31,10 +30,19 @@ function view_posts(view, page_num = 1) {
       this.style.height = this.scrollHeight + "px";
     });
 
+  if (view === "all") {
+    document.querySelector("#all").classList.add("view-box");
+    document.querySelector("#following").classList.remove("view-box");
+  } else {
+    document.querySelector("#all").classList.remove("view-box");
+    document.querySelector("#following").classList.add("view-box");
+  }
+
   fetch_posts(view, page_num);
 }
 
 function view_profile() {
+  document.querySelector("#view-box").style.display = "none";
   document.querySelector("#post-form").style.display = "none";
 
   let username = this.innerHTML;

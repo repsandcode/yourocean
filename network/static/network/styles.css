@@ -5,7 +5,8 @@
 }
 
 :root {
-  --username: rgb(0, 157, 196);
+  --body: #def3f6;
+  --light-blue: #4ab4de;
   --like: rgb(255, 105, 97);
 }
 
@@ -29,8 +30,29 @@ html {
   cursor: pointer;
 }
 
+.nav-height {
+  min-height: 60px;
+  height: 70px;
+}
+
+.logo {
+  color: var(--light-blue);
+}
+
+.view-box {
+  outline: 1px solid var(--light-blue);
+  background: var(--light-blue);
+}
+
+.post-btn {
+  background: var(--light-blue);
+  border: none;
+  outline: 1px solid var(--light-blue);
+  padding: 5px 25px;
+}
+
 .username {
-  color: var(--username);
+  color: var(--light-blue);
 }
 
 .username:hover {
